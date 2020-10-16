@@ -110,9 +110,9 @@ const MyComponent = () => {
 ...
 ```
 
-### placeHolderIsMinWidth
+### placeholderIsMinWidth
 
-_placeHolderIsMinWidth={boolean}_
+_placeholderIsMinWidth={boolean}_
 
 If set to true, the input will never resize to be smaller than the width of the placeholder.
 
@@ -121,7 +121,7 @@ import React from "react";
 import AutowidthInput from "react-autowidth-input";
 
 const MyComponent = () => {
-    return <AutowidthInput placeHolderIsMinWidth={true}/>
+    return <AutowidthInput placeholderIsMinWidth={true}/>
 };
 
 ...
