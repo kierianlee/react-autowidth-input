@@ -1,5 +1,5 @@
-import React, { InputHTMLAttributes, CSSProperties } from "react";
-interface AutowidthInputProps extends InputHTMLAttributes<HTMLInputElement> {
+import React, { DetailedHTMLProps, InputHTMLAttributes, CSSProperties } from "react";
+interface AutowidthInputProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     extraWidth?: number | string;
     minWidth?: number | string;
     wrapperClassName?: string;
