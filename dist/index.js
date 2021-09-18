@@ -72,12 +72,12 @@ var sizerStyle = {
  */
 var AutowidthInput = React.forwardRef(function (_a, forwardedRef) {
     var _b, _c, _d;
-    var _e = _a.extraWidth, extraWidth = _e === void 0 ? 16 : _e, wrapperClassName = _a.wrapperClassName, wrapperStyleProp = _a.wrapperStyle, onAutosize = _a.onAutosize, placeholderIsMinWidth = _a.placeholderIsMinWidth, props = __rest(_a, ["extraWidth", "wrapperClassName", "wrapperStyle", "onAutosize", "placeholderIsMinWidth"]);
+    var _e = _a.extraWidth, extraWidth = _e === void 0 ? 16 : _e, wrapperClassName = _a.wrapperClassName, wrapperStyleProp = _a.wrapperStyle, onAutosize = _a.onAutosize, placeholderIsMinWidth = _a.placeholderIsMinWidth, _f = _a.minWidth, minWidth = _f === void 0 ? 0 : _f, props = __rest(_a, ["extraWidth", "wrapperClassName", "wrapperStyle", "onAutosize", "placeholderIsMinWidth", "minWidth"]);
     var inputRef = React.useRef(null);
     var sizerRef = React.useRef(null);
     var placeholderSizerRef = React.useRef(null);
-    var _f = React.useState(""), input = _f[0], setInput = _f[1];
-    var _g = React.useState(0), inputWidth = _g[0], setInputWidth = _g[1];
+    var _g = React.useState(""), input = _g[0], setInput = _g[1];
+    var _h = React.useState(0), inputWidth = _h[0], setInputWidth = _h[1];
     var usedValue = (_b = props.value) !== null && _b !== void 0 ? _b : input;
     var handleInput = function (e) {
         setInput(e.target.value);
@@ -111,6 +111,9 @@ var AutowidthInput = React.forwardRef(function (_a, forwardedRef) {
                 placeholderSizerRef.current) {
                 width = placeholderWidth;
             }
+            if (width < +minWidth) {
+                width = +minWidth;
+            }
             if (width) {
                 setInputWidth(width + +extraWidth);
                 if (onAutosize)
@@ -119,7 +122,7 @@ var AutowidthInput = React.forwardRef(function (_a, forwardedRef) {
         }
         else if (props.placeholder && placeholderWidth) {
             /* If no input value exists, check for placeholder value and update the sizer accordingly  */
-            setInputWidth(placeholderWidth + +extraWidth);
+            setInputWidth(Math.max(+minWidth, placeholderWidth) + +extraWidth);
             if (onAutosize)
                 onAutosize(placeholderWidth);
         }
@@ -127,7 +130,7 @@ var AutowidthInput = React.forwardRef(function (_a, forwardedRef) {
             /* If no input value or placeholder exists, update the sizer to the width of the "extraWidth" prop (default is 16) */
             setInputWidth(+extraWidth);
             if (onAutosize)
-                onAutosize(+extraWidth);
+                onAutosize(+minWidth);
         }
     }, [
         usedValue,
@@ -136,6 +139,7 @@ var AutowidthInput = React.forwardRef(function (_a, forwardedRef) {
         placeholderIsMinWidth,
         onAutosize,
         setInputWidth,
+        minWidth,
     ]);
     var wrapperStyle = __assign(__assign({}, wrapperStyleProp), { position: "relative", display: (_d = (_c = props.style) === null || _c === void 0 ? void 0 : _c.display) !== null && _d !== void 0 ? _d : "inline-block" });
     var inputStyle = __assign({ boxSizing: "content-box", width: inputWidth }, props.style);
