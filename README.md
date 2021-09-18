@@ -91,7 +91,7 @@ const MyComponent = () => {
 
 _onAutoSize={(newWidth) => {}}_
 
-Callback function to be fired on input resize.
+Callback function to be fired on input resize. `newWidth` does not include width specified by `extraWidth` (see [above for `extraWidth` prop](#extrawidth))
 
 ```jsx
 import React, {useState} from "react";
@@ -122,6 +122,23 @@ import AutowidthInput from "react-autowidth-input";
 
 const MyComponent = () => {
     return <AutowidthInput placeholderIsMinWidth={true}/>
+};
+
+...
+```
+
+### minWidth
+
+_minWidth={number}_
+
+If set, specifies the minimum width of input element. Width specified by `extraWidth` is applied anyway, so actual minimum width is actually `extraWidth + minWidth` (see [above for `extraWidth` prop](#extrawidth))
+
+```jsx
+import React from "react";
+import AutowidthInput from "react-autowidth-input";
+
+const MyComponent = () => {
+    return <AutowidthInput minWidth={15}/>
 };
 
 ...

@@ -62,6 +62,7 @@ const AutowidthInput: React.FC<AutowidthInputProps> = forwardRef<
             wrapperStyle: wrapperStyleProp,
             onAutosize,
             placeholderIsMinWidth,
+            minWidth = 0,
             ...props
         },
         forwardedRef
@@ -115,6 +116,10 @@ const AutowidthInput: React.FC<AutowidthInputProps> = forwardRef<
                     width = placeholderWidth;
                 }
 
+                if (width < +minWidth) {
+                    width = +minWidth;
+                }
+
                 if (width) {
                     setInputWidth(width + +extraWidth);
                     if (onAutosize) onAutosize(width);
@@ -122,14 +127,14 @@ const AutowidthInput: React.FC<AutowidthInputProps> = forwardRef<
             } else if (props.placeholder && placeholderWidth) {
                 /* If no input value exists, check for placeholder value and update the sizer accordingly  */
 
-                setInputWidth(placeholderWidth + +extraWidth);
+                setInputWidth(Math.max(+minWidth, placeholderWidth) + +extraWidth);
 
                 if (onAutosize) onAutosize(placeholderWidth);
             } else if (sizerRef.current) {
                 /* If no input value or placeholder exists, update the sizer to the width of the "extraWidth" prop (default is 16) */
 
                 setInputWidth(+extraWidth);
-                if (onAutosize) onAutosize(+extraWidth);
+                if (onAutosize) onAutosize(+minWidth);
             }
         }, [
             usedValue,
@@ -138,6 +143,7 @@ const AutowidthInput: React.FC<AutowidthInputProps> = forwardRef<
             placeholderIsMinWidth,
             onAutosize,
             setInputWidth,
+            minWidth,
         ]);
 
         const wrapperStyle: CSSProperties = {
