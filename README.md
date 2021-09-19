@@ -149,8 +149,9 @@ const MyComponent = () => {
 
 ## Notes
 
-This component was inspired by Jed Watson's react-input-autosize, but rebuilt with modern react API's.
+This component was inspired by Jed Watson's react-input-autosize, but rebuilt with modern react APIs.
 
 ## Contributors
 
 -   [kierien](https://github.com/kierien)
+-   [burtek](https://github.com/burtek)
