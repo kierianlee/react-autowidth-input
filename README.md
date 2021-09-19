@@ -2,6 +2,9 @@
 
 Highly configurable & extensible automatically sized input field built with hooks.
 
+[![dependencies badge](https://david-dm.org/kierien/react-autowidth-input.svg)](https://www.npmjs.com/package/react-autowidth-input?activeTab=dependencies)
+[![npm version](https://badge.fury.io/js/react-autowidth-input.svg)](https://www.npmjs.com/package/react-autowidth-input)
+
 ## Features
 
 -   Works out of the box with zero config
@@ -146,8 +149,9 @@ const MyComponent = () => {
 
 ## Notes
 
-This component was inspired by Jed Watson's react-input-autosize, but rebuilt with modern react API's.
+This component was inspired by Jed Watson's react-input-autosize, but rebuilt with modern react APIs.
 
-## Contributers
+## Contributors
 
 -   [kierien](https://github.com/kierien)
+-   [burtek](https://github.com/burtek)
