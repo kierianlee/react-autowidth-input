@@ -78,7 +78,7 @@ var AutowidthInput = React.forwardRef(function (_a, forwardedRef) {
     var placeholderSizerRef = React.useRef(null);
     var _g = React.useState(""), input = _g[0], setInput = _g[1];
     var _h = React.useState(0), inputWidth = _h[0], setInputWidth = _h[1];
-    var usedValue = (_b = props.value) !== null && _b !== void 0 ? _b : input;
+    var usedValue = "" + ((_b = props.value) !== null && _b !== void 0 ? _b : input);
     var handleInput = function (e) {
         setInput(e.target.value);
         if (props.onChange)
@@ -169,7 +169,11 @@ AutowidthInput.propTypes = {
     placeholder: PropTypes__default['default'].string,
     placeholderIsMinWidth: PropTypes__default['default'].bool,
     style: PropTypes__default['default'].object,
-    value: PropTypes__default['default'].string,
+    value: PropTypes__default['default'].oneOfType([
+        // field value
+        PropTypes__default['default'].number,
+        PropTypes__default['default'].string
+    ]),
 };
 
 exports.default = AutowidthInput;
