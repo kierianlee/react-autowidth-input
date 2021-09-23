@@ -6,7 +6,7 @@ interface AutowidthInputProps extends DetailedHTMLProps<InputHTMLAttributes<HTML
     wrapperStyle?: CSSProperties;
     onAutosize?: (newWidth: number) => void;
     placeholderIsMinWidth?: boolean;
-    value?: string;
+    value?: string | number;
 }
 /**
  * Automatically sized input field.

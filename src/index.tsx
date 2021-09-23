@@ -35,7 +35,7 @@ interface AutowidthInputProps
     wrapperStyle?: CSSProperties;
     onAutosize?: (newWidth: number) => void;
     placeholderIsMinWidth?: boolean;
-    value?: string;
+    value?: string | number;
 }
 
 const sizerStyle: CSSProperties = {
@@ -74,7 +74,7 @@ const AutowidthInput: React.FC<AutowidthInputProps> = forwardRef<
         const [input, setInput] = useState<string>("");
         const [inputWidth, setInputWidth] = useState(0);
 
-        const usedValue = props.value ?? input;
+        const usedValue = `${props.value ?? input}`;
 
         const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
             setInput(e.target.value);
@@ -210,7 +210,11 @@ AutowidthInput.propTypes = {
     placeholder: PropTypes.string, // placeholder text
     placeholderIsMinWidth: PropTypes.bool, // don't collapse size to less than the placeholder
     style: PropTypes.object, // css styles for the outer element
-    value: PropTypes.string, // field value
+    value: PropTypes.oneOfType([
+        // field value
+        PropTypes.number,
+        PropTypes.string
+    ]),
 };
 
 export default AutowidthInput;
