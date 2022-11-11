@@ -2,8 +2,7 @@
 
 Highly configurable & extensible automatically sized input field built with hooks.
 
-[![dependencies badge](https://david-dm.org/kierien/react-autowidth-input.svg)](https://www.npmjs.com/package/react-autowidth-input?activeTab=dependencies)
-[![npm version](https://badge.fury.io/js/react-autowidth-input.svg)](https://www.npmjs.com/package/react-autowidth-input)
+[![npm version](https://img.shields.io/npm/v/react-autowidth-input)](https://www.npmjs.com/package/react-autowidth-input)
 
 ## Features
 

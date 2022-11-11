@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  data-testid="wrapper"
+  style={
+    {
+      "display": "inline-block",
+      "position": "relative",
+    }
+  }
+>
+  <div
+    data-testid="sizer"
+    style={
+      {
+        "height": 0,
+        "left": 0,
+        "overflow": "scroll",
+        "position": "absolute",
+        "top": 0,
+        "visibility": "hidden",
+        "whiteSpace": "pre",
+      }
+    }
+  />
+  <input
+    data-testid="input"
+    onChange={[Function]}
+    style={
+      {
+        "boxSizing": "content-box",
+        "width": 0,
+      }
+    }
+    value=""
+  />
+</div>
+`;
