@@ -1,5 +1,4 @@
 import React, {
-  DetailedHTMLProps,
   InputHTMLAttributes,
   CSSProperties,
   useState,
@@ -10,11 +9,7 @@ import React, {
 } from "react";
 import { mergeRefs } from "react-merge-refs";
 
-interface AutowidthInputProps
-  extends DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+interface AutowidthInputProps extends InputHTMLAttributes<HTMLInputElement> {
   extraWidth?: number | string;
   minWidth?: number | string;
   onAutosize?: (newWidth: number) => void;
