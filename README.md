@@ -1,6 +1,6 @@
 # React Autowidth Input
 
-Highly configurable & extensible automatically sized input field built with hooks.
+Highly configurable & extensible automatically sized input field.
 
 [![npm version](https://img.shields.io/npm/v/react-autowidth-input)](https://www.npmjs.com/package/react-autowidth-input)
 
@@ -13,7 +13,7 @@ Highly configurable & extensible automatically sized input field built with hook
 
 ## Install
 
-    npm install react-autowidth-input
+    npm i react-autowidth-input
 
 ## Quick Start
 

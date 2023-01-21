@@ -6,12 +6,11 @@
     "input",
     "autowidth",
     "react",
-    "reactjs",
-    "hooks"
+    "reactjs"
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/inkiear/react-autowidth-input"
   },
   "author": {
     "name": "Kierian Lee",
