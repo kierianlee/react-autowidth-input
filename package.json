@@ -1,6 +1,6 @@
 {
   "name": "react-autowidth-input",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Highly configurable & extensible automatically sized input field built with hooks.",
   "keywords": [
     "input",
